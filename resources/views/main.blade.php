@@ -18,7 +18,7 @@
     <div class="d-2">
         <h1>URL Shortener</h1>
         <p>
-            이 서비스는 쇼핑몰이나 공유 링크 등, 길고 복잡한 URL을 간결하게 줄여 저장 또는 공유할 수 있도록 개발되었습니다. 반사회적이고 부적절한 링크는 관리자에 의해 삭제될 수 있으니 유의하시기 바라며, 링크 삭제 문의는 <a href="/support">여기</a>를 참고하시기 바랍니다.
+            이 서비스는 쇼핑몰이나 공유 링크 등, 길고 복잡한 URL을 간결하게 줄여 저장 또는 공유할 수 있도록 개발되었습니다. 반사회적이고 부적절한 링크는 관리자에 의해 삭제될 수 있으니 유의하시기 바랍니다. 또한, 삭제를 요청할 링크가 있다면 <a href="/support">지원</a> 페이지를 참조해 주시기 바랍니다.
         </p>
     </div>
     <div class="d-3">
@@ -27,5 +27,25 @@
             <input type="text" name="link" class="d-input" placeholder="긴 URL을 입력하세요.">
             <p><a href="javascript:;" onclick="document.getElementById('link').submit();">생성하기<i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
         </form>
+    </div>
+    <div class="d-box-wrap">
+        <div class="row">
+            <div class="col">
+                <a href="/support">
+                    <div class="d-box">
+                        <h1><i class="fa-solid fa-arrow-up-right-from-square"></i>지원</h1>
+                        <p>문제가 발생했나요?</p>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="/statistics">
+                    <div class="d-box">
+                        <h1><i class="fa-solid fa-arrow-up-right-from-square"></i>조회</h1>
+                        <p>내가 단축한 링크의 통계는?</p>
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
 </x-layout>

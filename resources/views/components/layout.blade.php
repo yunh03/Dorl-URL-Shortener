@@ -13,8 +13,7 @@
         <div class="dorl-wrap">
             <div class="container">
                 {{ $slot }}
-            </div>
-            <footer class="d-footer">
+                <footer class="d-footer">
                 <p>2023 DORL.KR, 모든 권한 보유.</p>
                 <p>
                     <a href="/terms">이용약관</a>
@@ -22,13 +21,14 @@
                 <p>
                     <a href="https://github.com/yunh03">개발자 GitHub</a>
                 </p>
-                <p>
+                <!-- <p>
                     <a href="/support">지원</a>
                 </p>
                 <p>
                     <a href="/results">처리 결과 조회</a>
-                </p>
+                </p> -->
             </footer>
+            </div>
         </div>
     </body>
 </html>
