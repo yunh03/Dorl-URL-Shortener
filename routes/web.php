@@ -26,5 +26,10 @@ Route::get('/support', function()
     return view('support');
 });
 
+Route::get('/results', function()
+{
+    return view('results');
+});
+
 Route::post('/', [ShortLinkController::class, 'store']);
 Route::get('{code}', [ShortLinkController::class, 'shortenLink']);
