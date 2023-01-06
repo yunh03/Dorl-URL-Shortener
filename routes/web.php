@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShortLinkController;
+use App\Http\Controllers\SupportController;
+use App\Http\Controllers\LinksStatisticsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,15 +18,15 @@ use App\Http\Controllers\ShortLinkController;
 
 Route::get('/', [ShortLinkController::class, 'index']);
 
+Route::get('/statistics', [LinksStatisticsController::class, 'index']);
+
 Route::get('/terms', function()
 {
     return view('terms');
 });
 
-Route::get('/support', function()
-{
-    return view('support');
-});
+Route::get('/support', [SupportController::class, 'index']);
+Route::post('/support', [SupportController::class, 'store']);
 
 Route::get('/results', function()
 {

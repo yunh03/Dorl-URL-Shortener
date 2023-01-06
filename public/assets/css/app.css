@@ -170,6 +170,22 @@ body {
     outline: none;
 }
 
+.d-dropdown {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #616161;
+    color: #ffffff;
+    border-radius: 30px;
+}
+
+.d-dropdown:focus {
+    outline: none;
+}
+
 .d-3 p {
     padding-top: 10px;
     font-size: 14px;
@@ -187,6 +203,18 @@ body {
 
 .d-3 i {
     padding-left: 15px;
+}
+
+.ds-text {
+    font-size: 12px;
+    opacity: 0.6;
+    padding-top: 2px !important;
+    padding-bottom: 2px;
+}
+
+.ds-text i {
+    padding-right: 15px;
+    padding-left: 0px !important;
 }
 
 .d-footer {
