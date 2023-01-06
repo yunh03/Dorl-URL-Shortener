@@ -28,17 +28,37 @@
             <p><a href="javascript:;" onclick="document.getElementById('link').submit();">생성하기<i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
         </form>
     </div>
+    <div class="d-plus-wrap">
+        <div class="row">
+            <div class="col-sm">
+                <div class="d-plus-box">
+                    <h1>총 단축된 링크</h1>
+                    <p>
+                        {{ $all_links_num . "개" }}
+                    </p>
+                </div><br />
+            </div>
+            <div class="col-sm">
+                <div class="d-plus-box">
+                    <h1>오늘 단축된 링크</h1>
+                    <p>
+                        {{ $today_links_num . "개" }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="d-box-wrap">
         <div class="row">
-            <div class="col">
+            <div class="col-sm">
                 <a href="/support">
                     <div class="d-box">
                         <h1><i class="fa-solid fa-arrow-up-right-from-square"></i>지원</h1>
                         <p>문제가 발생했나요?</p>
-                    </div>
+                    </div><br />
                 </a>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <a href="/statistics">
                     <div class="d-box">
                         <h1><i class="fa-solid fa-arrow-up-right-from-square"></i>조회</h1>

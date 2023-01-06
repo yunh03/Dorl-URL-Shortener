@@ -12,7 +12,10 @@ class ShortLinkController extends Controller
 {
     public function index()
     {
-        return view('main');
+        $all_links_num = count(DB::table('short_links')->get());
+        $today_links_num = count(DB::table('short_links')->select(DB::raw('*'))->whereRaw('Date(created_at) = CURDATE()')->get());
+        
+        return view('main', compact('all_links_num', $all_links_num, 'today_links_num', $today_links_num));
     }
 
     public function store(Request $request)
