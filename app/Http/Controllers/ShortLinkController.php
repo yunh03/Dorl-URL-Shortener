@@ -55,6 +55,14 @@ class ShortLinkController extends Controller
                 ->back()
                 ->with('error', '등록된 단축 링크가 아니거나, 이용약관 위반 등의 사유로 관리자에 의해 삭제되었습니다. 유효한 단축 URL 여부를 다시 한 번 확인하시기 바랍니다.');
         } else {
+            DB::table('links_log')
+            ->insert(
+                [
+                    'code' => $code,
+                    "created_at" =>  \Carbon\Carbon::now(),
+                    "updated_at" => \Carbon\Carbon::now()
+                ]
+            );
             return Redirect::to($find);
         }
     }
