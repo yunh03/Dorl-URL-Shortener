@@ -19,6 +19,7 @@ use App\Http\Controllers\LinksStatisticsController;
 Route::get('/', [ShortLinkController::class, 'index']);
 
 Route::get('/statistics', [LinksStatisticsController::class, 'index']);
+Route::post('/statistics', [LinksStatisticsController::class, 'lookup']);
 
 Route::get('/terms', function()
 {

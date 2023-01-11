@@ -62,7 +62,7 @@
                 <a href="/statistics">
                     <div class="d-box">
                         <h1><i class="fa-solid fa-arrow-up-right-from-square"></i>조회</h1>
-                        <p>내가 단축한 링크의 통계는?</p>
+                        <p>통계 및 링크 조회하기</p>
                     </div>
                 </a>
             </div>

@@ -225,6 +225,26 @@ body {
     outline: none;
 }
 
+.d-stat-hr {
+    margin-top: 50px;
+    margin-bottom: 34px;
+    opacity: 0.3;
+}
+
+.d-stat-noti {
+    padding-top: 10px;
+    margin-bottom: -13px;
+}
+
+.d-stat-noti h1 {
+    font-size: 20px;
+}
+
+.d-stat-noti p {
+    opacity: 0.6;
+    font-size: 12px;
+}
+
 .d-3 p {
     padding-top: 10px;
     font-size: 14px;
@@ -242,6 +262,24 @@ body {
 
 .d-3 i {
     padding-left: 15px;
+}
+
+.d-4 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.d-4 p {
+    font-size: 15px;
+    text-align: left;
+    opacity: 0.6;
+    line-height: 30px;
+}
+
+.d-4 h1 {
+    font-size: 40px;
+    text-align: left;
+    font-family: 'Poppins';
 }
 
 .ds-text {
