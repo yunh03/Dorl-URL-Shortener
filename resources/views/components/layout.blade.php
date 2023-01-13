@@ -21,14 +21,10 @@
                 <p>
                     <a href="https://github.com/yunh03">개발자 GitHub</a>
                 </p>
-                <!-- <p>
-                    <a href="/support">지원</a>
-                </p>
-                <p>
-                    <a href="/results">처리 결과 조회</a>
-                </p> -->
             </footer>
             </div>
         </div>
     </body>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="assets/js/app.js"></script>
 </html>

@@ -6,7 +6,14 @@
         <div class="d-noti">
             <h1><i class="fa-regular fa-circle-check"></i>URL 생성 완료</h1>
             <h2>단축된 URL이 생성되었습니다. 아래 링크를 클릭하여 복사할 수 있습니다.</h2>
-            <p><a href="https://dorl.kr/{!! nl2br(session()->get('success')) !!}"><i class="fa-solid fa-arrow-up-right-from-square"></i>https://dorl.kr/{!! nl2br(session()->get('success')) !!}</a></p>
+            <p>
+                <a href="javascript:copyToClipboard('#url-copy');">
+                    <i class="fa-solid fa-copy"></i>
+                    <span id="url-copy">
+                        https://dorl.kr/{!! nl2br(session()->get('success')) !!}
+                    </span>
+                </a>
+            </p>
         </div>
     @endif
     @if(Session::has('error'))
