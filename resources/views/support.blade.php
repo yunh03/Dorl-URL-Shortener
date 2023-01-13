@@ -25,9 +25,12 @@
         <form method="POST" id="support" action="/support">
             @csrf
             <input type="text" name="code" class="d-input" placeholder="단축 URL 코드 입력(5자)">
-            <p class="ds-text">
-                <i class="fa-solid fa-plus"></i>https://dorl.kr/<span style="color: yellow">xxxxx</span>
-            </p>
+            <div class="d-infor">
+                <h1><i class="fa-solid fa-question"></i>단축 URL 코드란?</h1>
+                <p>
+                    https://dorl.kr/xxxxx에서, https://dorl.kr/을 제외한 xxxxx 부분이며, 5자 영문으로 이루어져 있습니다. 입력한 단축 URL 코드가 유효하지 않거나, 단축 URL 코드 이외의 코드를 입력하면 조회가 불가능하니 정확하게 입력하시기 바랍니다.
+                </p>
+            </div>
             <select name="reason" id="reason" class="d-dropdown">
                 <option value="0">요청 사유 선택</option>
                 <option value="1">반사회적, 사회 미풍양속 저해</option>

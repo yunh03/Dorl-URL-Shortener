@@ -32,6 +32,7 @@ class LinksStatisticsController extends Controller
             $today_f = count(DB::table('links_log')->where('code', $code)->select(DB::raw('*'))->whereRaw('Date(created_at) = CURDATE()')->get());
             $origin_link = DB::table('short_links')->where('code', $code)->value('link');
             $created_at = DB::table('short_links')->where('code', $code)->value('created_at');
+            $status = DB::table('short_links')->where('code', $code)->value('status');
             return redirect()
                 ->back()
                 ->with('success', '완료')
@@ -40,6 +41,7 @@ class LinksStatisticsController extends Controller
                 ->with('current_date_time', $current_date_time)
                 ->with('total_f', $total_f)
                 ->with('code', $code)
+                ->with('status', $status)
                 ->with('today_f', $today_f);
         }
     }

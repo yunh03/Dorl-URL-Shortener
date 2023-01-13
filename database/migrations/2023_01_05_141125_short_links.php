@@ -17,6 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('code');
             $table->string('link');
+            $table->string('status')->default('0');
             $table->timestamps();
         });
     }

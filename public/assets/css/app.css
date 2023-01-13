@@ -225,6 +225,25 @@ body {
     outline: none;
 }
 
+.d-infor {
+    padding-top: 25px;
+    padding-bottom: 10px;
+}
+
+.d-infor i {
+    padding-right: 15px;
+}
+
+.d-infor h1 {
+    font-size: 15px;
+}
+
+.d-infor p {
+    font-size: 15px;
+    opacity: 0.6;
+    line-height: 25px;
+}
+
 .d-stat-hr {
     margin-top: 50px;
     margin-bottom: 34px;
