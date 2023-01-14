@@ -46,4 +46,40 @@ class SupportController extends Controller
                 ->with('success', $caseid);
         }
     }
+    public function results()
+    {
+        return view('results');
+    }
+
+    public function results_c(Request $request)
+    {
+        $caseid = $request->input('caseid');
+        $current_date_time = \Carbon\Carbon::now()->toDateTimeString();
+        $validator = Validator::make($request->all(), [
+            'caseid' => ['required', 'min:5', 'max:5']
+        ]);
+        
+        if($validator->fails()) {
+            return redirect()
+                ->back()
+                ->with('error', '유효한 Case ID 여부를 확인하시기 바랍니다.');
+        } else {
+            $case = DB::table('support')->where('caseid', $caseid)->value('code');
+            $status = DB::table('support')->where('caseid', $caseid)->value('status');
+            $updated_at = DB::table('support')->where('caseid', $caseid)->value('updated_at');
+            $code = DB::table('short_links')->where('code', $case)->value('code');
+            $is_blocked = DB::table('short_links')->where('code', $case)->value('status');
+            $reason = DB::table('support')->where('caseid', $caseid)->value('reason');
+            return redirect()
+                ->back()
+                ->with('success', '완료')
+                ->with('code', $code)
+                ->with('caseid', $caseid)
+                ->with('reason', $reason)
+                ->with('is_blocked', $is_blocked)
+                ->with('updated_at', $updated_at)
+                ->with('status', $status)
+                ->with('current_date_time', $current_date_time);
+        }
+    }
 }

@@ -35,6 +35,7 @@ Route::get('/support', [SupportController::class, 'index']);
 Route::post('/support', [SupportController::class, 'store']);
 
 Route::get('/results', [SupportController::class, 'results']);
+Route::post('/results', [SupportController::class, 'results_c']);
 
 Route::post('/', [ShortLinkController::class, 'store']);
 Route::get('{code}', [ShortLinkController::class, 'shortenLink']);

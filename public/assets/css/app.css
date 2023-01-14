@@ -158,6 +158,15 @@ body {
     padding-top: 30px;
 }
 
+.d-plus-wrap a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.d-plus-wrap i {
+    padding-right: 15px;
+}
+
 .d-plus-wrap .d-plus-box {
     padding-top: 20px;
     padding-bottom: 15px;
