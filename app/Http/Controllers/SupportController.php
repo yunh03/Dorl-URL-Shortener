@@ -23,7 +23,7 @@ class SupportController extends Controller
         $current_date_time = \Carbon\Carbon::now()->toDateTimeString();
 
         $validator = Validator::make($request->all(), [
-            'code' => ['required', 'digits:5', 'regex:/^[a-zA-Z0-9 ]+$/'],
+            'code' => ['required', 'max:5', 'regex:/^[a-zA-Z0-9 ]+$/'],
             'reason' => ['required']
         ]);
 

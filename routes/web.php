@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShortLinkController;
 use App\Http\Controllers\SupportController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LinksStatisticsController;
 
 /*
@@ -21,6 +22,10 @@ Route::get('/', [ShortLinkController::class, 'index']);
 Route::get('/statistics', [LinksStatisticsController::class, 'index']);
 Route::post('/statistics', [LinksStatisticsController::class, 'lookup']);
 
+Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/dashboard/block/{code}', [DashboardController::class, 'block']);
+Route::get('/dashboard/support', [DashboardController::class, 'support']);
+
 Route::get('/terms', function()
 {
     return view('terms');
@@ -29,10 +34,7 @@ Route::get('/terms', function()
 Route::get('/support', [SupportController::class, 'index']);
 Route::post('/support', [SupportController::class, 'store']);
 
-Route::get('/results', function()
-{
-    return view('results');
-});
+Route::get('/results', [SupportController::class, 'results']);
 
 Route::post('/', [ShortLinkController::class, 'store']);
 Route::get('{code}', [ShortLinkController::class, 'shortenLink']);
