@@ -40,11 +40,30 @@ class DashboardController extends Controller
                 ->back()
                 ->with('success', '선택된 단축 URL 차단이 해제되었습니다.');
         }
-        
     }
     public function support()
     {
         $serves = DB::table('support')->orderBy('id', 'desc')->get();
         return view('dashboard/support', compact('serves', $serves));
+    }
+    public function support_c($code = null)
+    {
+        $find = DB::table('support')->where('id', $code)->value('status');
+        if($find == "0") {
+            DB::table('support')
+            ->where('id', $code)
+            ->update(
+                [
+                    'status' => "1"
+                ]
+            );
+            return redirect()
+                ->back()
+                ->with('success', '지원 요청이 승인 처리되었습니다.');
+        } else {
+            return redirect()
+                ->back()
+                ->with('error', '처리할 수 없음. 이미 승인된 지원 요청입니다.');
+        }
     }
 }
