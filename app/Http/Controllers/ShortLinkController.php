@@ -49,6 +49,7 @@ class ShortLinkController extends Controller
 
     public function shortenLink($code)
     {
+        $current_date_time = \Carbon\Carbon::now()->toDateTimeString();
         $find = DB::table('short_links')->where('code', $code)->value('link');
         $status = DB::table('short_links')->where('code', $code)->value('status');
         if($find == "") {
@@ -60,12 +61,11 @@ class ShortLinkController extends Controller
                 ->back()
                 ->with('error', '관리자에 의해 차단된 링크입니다.');
         } else {
-            DB::table('links_log')
+            DB::table('links_logs')
             ->insert(
                 [
                     'code' => $code,
-                    "created_at" =>  \Carbon\Carbon::now(),
-                    "updated_at" => \Carbon\Carbon::now()
+                    'launched' =>  $current_date_time
                 ]
             );
             return Redirect::to($find);
