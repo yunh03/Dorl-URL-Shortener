@@ -22,22 +22,27 @@ Route::get('/', [ShortLinkController::class, 'index']);
 Route::get('/statistics', [LinksStatisticsController::class, 'index']);
 Route::post('/statistics', [LinksStatisticsController::class, 'lookup']);
 
-Route::get('/dashboard', [DashboardController::class, 'index']);
-Route::get('/dashboard/block/{code}', [DashboardController::class, 'block']);
-Route::get('/dashboard/support', [DashboardController::class, 'support']);
-Route::get('/dashboard/support/c/{code}', [DashboardController::class, 'support_c']);
-Route::get('/signin', [DashboardController::class, 'signin']);
+Route::controller(DashboardController::class)->group(function() {
+    Route::get('/dashboard', 'index');
+    Route::get('/dashboard/block/{code}', 'block');
+    Route::get('/dashboard/support', 'support');
+    Route::get('/dashboard/support/c/{code}', 'support_c');
+    Route::get('/signin', 'signin');
+    Route::get('/signout', 'signout');
+    Route::post('/signin/validate', 'validate_signin');
+});
 
 Route::get('/terms', function()
 {
     return view('terms');
 });
 
-Route::get('/support', [SupportController::class, 'index']);
-Route::post('/support', [SupportController::class, 'store']);
-
-Route::get('/results', [SupportController::class, 'results']);
-Route::post('/results', [SupportController::class, 'results_c']);
+Route::controller(SupportController::class)->group(function() {
+    Route::get('/support', 'index');
+    Route::post('/support', 'store');
+    Route::get('/results', 'results');
+    Route::post('/results', 'results_c');
+});
 
 Route::post('/', [ShortLinkController::class, 'store']);
 Route::get('{code}', [ShortLinkController::class, 'shortenLink']);

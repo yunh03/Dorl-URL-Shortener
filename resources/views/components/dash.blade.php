@@ -21,10 +21,14 @@
                     <i class="fas fa-bars"></i>
                 </div>
             </div>
-            <ul>
-                <li><a href="/dashboard">대시보드</a></li>
-                <li><a href="/dashboard/support">지원</a></li>
-            </ul>
+            @guest
+            @else
+                <ul>
+                    <li><a href="/dashboard">대시보드</a></li>
+                    <li><a href="/dashboard/support">지원</a></li>
+                    <li><a href="/signout">로그아웃</a></li>
+                </ul>
+            @endguest
         </nav>
         {{ $slot }}
     </body>
