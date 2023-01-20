@@ -32,11 +32,6 @@ Route::controller(DashboardController::class)->group(function() {
     Route::post('/signin/validate', 'validate_signin');
 });
 
-Route::get('/terms', function()
-{
-    return view('terms');
-});
-
 Route::controller(SupportController::class)->group(function() {
     Route::get('/support', 'index');
     Route::post('/support', 'store');
