@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('links_log', function (Blueprint $table) {
+        Schema::create('links_logs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('code');
-            $table->timestamps();
+            $table->string('launched');
         });
     }
 
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('links_log');
+        Schema::dropIfExists('links_logs');
     }
 };
