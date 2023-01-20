@@ -24,7 +24,6 @@
             <ul>
                 <li><a href="/dashboard">대시보드</a></li>
                 <li><a href="/dashboard/support">지원</a></li>
-                <li><a href="#">로그아웃</a></li>
             </ul>
         </nav>
         {{ $slot }}

@@ -14,6 +14,10 @@ class DashboardController extends Controller
         $serves = DB::table('short_links')->orderBy('id', 'desc')->get();
         return view('dashboard/dashboard', compact('serves', $serves));
     }
+    public function signin()
+    {
+        return view('dashboard/signin');
+    }
     public function block($code = null)
     {
         $find = DB::table('short_links')->where('id', $code)->value('status');

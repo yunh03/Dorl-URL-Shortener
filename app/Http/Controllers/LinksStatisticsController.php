@@ -28,8 +28,8 @@ class LinksStatisticsController extends Controller
                 ->back()
                 ->with('error', '유효한 단축 URL 코드를 입력하시기 바랍니다.');
         } else {
-            $total_f = count(DB::table('links_log')->where('code', $code)->get());
-            $today_f = count(DB::table('links_log')->where('code', $code)->select(DB::raw('*'))->whereRaw('Date(created_at) = CURDATE()')->get());
+            $total_f = count(DB::table('links_logs')->where('code', $code)->get());
+            $today_f = count(DB::table('links_logs')->where('code', $code)->select(DB::raw('*'))->whereRaw('Date(launched) = CURDATE()')->get());
             $origin_link = DB::table('short_links')->where('code', $code)->value('link');
             $created_at = DB::table('short_links')->where('code', $code)->value('created_at');
             $status = DB::table('short_links')->where('code', $code)->value('status');

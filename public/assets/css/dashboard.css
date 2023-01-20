@@ -33,6 +33,10 @@ body {
     text-decoration: none;
 }
 
+.d-sign i {
+    padding-left: 15px;
+}
+
 .d-sign a:hover {
     color: #a07eee;
     text-decoration: underline;

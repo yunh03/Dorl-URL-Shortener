@@ -57,14 +57,12 @@
         <div class="d-box-wrap">
             <div class="row">
                 <div class="col-sm">
-                    <a href="/support">
-                        <div class="d-box">
-                            <h1><i class="fa-solid fa-calendar-days"></i>생성일</h1>
-                            <p>
-                                {!! nl2br(session()->get('created_at')) !!}
-                            </p>
-                        </div><br />
-                    </a>
+                    <div class="d-box">
+                        <h1><i class="fa-solid fa-calendar-days"></i>생성일</h1>
+                        <p>
+                            {!! nl2br(session()->get('created_at')) !!}
+                        </p>
+                    </div><br />
                 </div>
                 <div class="col-sm">
                     <a href="{!! nl2br(session()->get('origin_link')) !!}">

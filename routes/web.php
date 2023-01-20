@@ -26,6 +26,7 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/dashboard/block/{code}', [DashboardController::class, 'block']);
 Route::get('/dashboard/support', [DashboardController::class, 'support']);
 Route::get('/dashboard/support/c/{code}', [DashboardController::class, 'support_c']);
+Route::get('/signin', [DashboardController::class, 'signin']);
 
 Route::get('/terms', function()
 {
